@@ -1,0 +1,649 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+body h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    /* Remove estilos anteriores de texto */
+    height: 50px; /* Ajuste conforme a altura desejada */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%; /* Usa 100% da altura definida no container */
+    width: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem não seja cortada */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ea8b07;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('area-externa2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Adicione esta linha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #ea8b07;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #55afd6;
+}
+
+/* Galeria Section */
+.galeria h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 200px;
+    gap: 16px;
+    padding: 2rem;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.galeria-item:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+.galeria-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria-button .cta-button {
+    min-width: 40vw;
+}
+
+.servicos {
+    padding: 3rem 0;
+    background: transparent; /* Removed background */
+}
+
+.servicos h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: masonry; /* Creates a staggered layout */
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.servico-item {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.9); /* Light background */
+    border: 2px solid #ea8b07; /* Added border */
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.servico-item:nth-child(odd) {
+    transform: translateY(-20px); /* Staggered positioning */
+}
+
+.servico-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.servico-item i {
+    font-size: 3rem;
+    color: #ea8b07; /* Changed to brand color */
+    margin-bottom: 1.5rem;
+}
+
+.servico-item h3 {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+
+/* Sobre Section */
+.sobre {
+    padding: 3rem 0;
+    background: #f8f9fa;
+}
+
+.sobre-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sobre-img img {
+    max-width: 360px;
+    max-height: 640px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: -20px 20px 3px #ea8b07; /* Deslocamento para baixo e para a direita */
+    border: 2px solid #ffffff; /* Opcional: adiciona uma borda */
+    
+}
+
+.sobre-text h2 {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    text-align: left;
+}
+
+.highlight {
+    background-color: #ea8b07; /* Cor do "marca-texto" */
+    padding: 2px 4px; /* Adiciona espaço ao redor do texto */
+    border-radius: 2px; /* Bordas arredondadas */
+    color: #ffffff;
+}
+
+.span1 {
+    color: #ea8b07;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #ea8b07;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1e3a8a;
+}
+
+/* Contato Section */
+.contato {
+    padding: 3rem 0;
+    /* Background com overlay mais suave */
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('logo.png');
+    background-size: 45% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contato h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+.contato button {
+    width: 480px;
+    max-height: 80px;
+    border: none;
+}
+
+.contato-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Efeito de vidro fosco */
+    background: rgba(255, 255, 255, 0.01);  /* Fundo branco semi-transparente */
+    backdrop-filter: blur(3px);  /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(3px);  /* Para suporte Safari */
+    
+    /* Borda e sombra */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Arredondamento e padding */
+    border-radius: 20px;
+    padding: 2rem;
+    
+    /* Garante que o conteúdo fique dentro do container */
+    overflow: hidden;
+    
+    /* Melhora a performance de renderização */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #ea8b07;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-contact h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-contact p {
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    color: #999;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #999;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 80px 0 0 0;
+    width: 80%;
+    max-width: 700px;
+}
+
+.lightbox-slide {
+    display: none;
+}
+
+.lightbox-slide img {
+    margin-top: 10px;
+    max-width: 95%;
+    max-height: 85%;
+
+}
+
+.caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 80px 0 0 0;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 5%;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.whatsapp-button {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-button:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1);
+}
+
+.whatsapp-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animação de pulso */
+.whatsapp-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    animation: pulse-border 1.5s ease-out infinite;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Navbar Mobile */
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 1rem;
+    }
+
+    /* Hero Section Mobile */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .galeria {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .galeria-button .cta-button {
+        min-width: 85vw;
+    }
+
+    /* Sobre Section Mobile */
+    .sobre-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sobre-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sobre-text h2 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+    }
+
+    /* Contato Section Mobile */
+    .contato-content {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        backdrop-filter: blur(1px);  /* Efeito de desfoque */
+        -webkit-backdrop-filter: blur(1px);  /* Para suporte Safari */
+    }
+    
+
+    .contato-content .cta-button {
+        max-width: 80vw;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .servico-item:nth-child(odd) {
+        transform: none; /* Reset staggered positioning on mobile */
+    }
+
+    .servico-item:nth-child(even) {
+        transform: none; /* Reset staggered positioning on mobile */
+    }
+
+    .footer-contact {
+        margin-left: 5%;
+    }
+
+    .footer-info {
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero Section Small Mobile */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Seções Gerais Small Mobile */
+    .container {
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+    }
+}
