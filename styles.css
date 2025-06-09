@@ -83,8 +83,9 @@ body h2 {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('area-externa2.jpg');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Adicione esta linha */
+    background-position: center center;
+    background-attachment: scroll; /* Adicione esta linha */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -630,12 +631,23 @@ body h2 {
 
 @media (max-width: 480px) {
     /* Hero Section Small Mobile */
+    .hero {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+    }
+
     .hero-content h1 {
         font-size: 2rem;
     }
 
     .hero-content p {
         font-size: 1rem;
+    }
+
+    .sobre-img {
+        margin: 5%;
     }
 
     /* Seções Gerais Small Mobile */
