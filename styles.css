@@ -523,6 +523,12 @@ body h2 {
 }
 
 /* Responsividade */
+@media (max-width: 1140px) {
+    .sobre-img{
+        margin: 5%;
+    }
+}
+
 @media (max-width: 768px) {
     /* Navbar Mobile */
     .menu-icon {
@@ -574,6 +580,10 @@ body h2 {
     }
 
     /* Sobre Section Mobile */
+    .sobre-img{
+        margin: 5%;
+    }
+
     .sobre-content {
         grid-template-columns: 1fr;
         gap: 2rem;
